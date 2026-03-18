@@ -1,0 +1,777 @@
+const bibleData = [
+    {c:1, v:1, t:"예수 그리스도의 계시라 이는 하나님이 그에게 주사 반드시 속히 될 일을 그 종들에게 보이시려고 그 천사를 그 종 요한에게 보내어 지시하신 것이라"},
+    {c:1, v:2, t:"요한은 하나님의 말씀과 예수 그리스도의 증거 곧 자기의 본 것을 다 증거하였느니라"},
+    {c:1, v:3, t:"이 예언의 말씀을 읽는 자와 듣는 자들과 그 가운데 기록한 것을 지키는 자들이 복이 있나니 때가 가까움이라"},
+    {c:1, v:4, t:"요한은 아시아에 있는 일곱 교회에 편지하노니 이제도 계시고 전에도 계시고 장차 오실 이와 그 보좌 앞에 일곱 영과"},
+    {c:1, v:5, t:"또 충성된 증인으로 죽은 자들 가운데서 먼저 나시고 땅의 임금들의 머리가 되신 예수 그리스도로 말미암아 은혜와 평강이 너희에게 있기를 원하노라 우리를 사랑하사 그의 피로 우리 죄에서 우리를 해방하시고"},
+    {c:1, v:6, t:"그 아버지 하나님을 위하여 우리를 나라와 제사장으로 삼으신 그에게 영광과 능력이 세세토록 있기를 원하노라 아멘"},
+    {c:1, v:7, t:"볼찌어다 구름을 타고 오시리라 각인의 눈이 그를 보겠고 그를 찌른 자들도 볼터이요 땅에 있는 모든 족속이 그를 인하여 애곡하리니 그러하리라 아멘"},
+    {c:1, v:8, t:"주 하나님이 가라사대 나는 알파와 오메가라 이제도 있고 전에도 있었고 장차 올 자요 전능한 자라 하시더라"},
+    {c:1, v:9, t:"나 요한은 너희 형제요 예수의 환난과 나라와 참음에 동참하는 자라 하나님의 말씀과 예수의 증거를 인하여 밧모라 하는 섬에 있었더니"},
+    {c:1, v:10, t:"주의 날에 내가 성령에 감동하여 내 뒤에서 나는 나팔 소리 같은 큰 음성을 들으니"},
+    {c:1, v:11, t:"가로되 너 보는 것을 책에 써서 에베소, 서머나, 버가모, 두아디라, 사데, 빌라델비아, 라오디게아 일곱 교회에 보내라 하시기로"},
+    {c:1, v:12, t:"몸을 돌이켜 나더러 말한 음성을 알아 보려고 하여 돌이킬 때에 일곱 금 촛대를 보았는데"},
+    {c:1, v:13, t:"촛대 사이에 인자 같은 이가 발에 끌리는 옷을 입고 가슴에 금띠를 띠고"},
+    {c:1, v:14, t:"그 머리와 털의 희기가 흰 양털 같고 눈 같으며 그의 눈은 불꽃 같고"},
+    {c:1, v:15, t:"그의 발은 풀무에 단련한 빛난 주석 같고 그의 음성은 많은 물 소리와 같으며"},
+    {c:1, v:16, t:"그 오른손에 일곱 별이 있고 그 입에서 좌우에 날선 검이 나오고 그 얼굴은 해가 힘있게 비취는 것 같더라"},
+    {c:1, v:17, t:"내가 볼때에 그 발앞에 엎드러져 죽은 자 같이 되매 그가 오른손을 내게 얹고 가라사대 두려워말라 나는 처음이요 나중이니"},
+    {c:1, v:18, t:"곧 산 자라 내가 전에 죽었었노라 볼찌어다 이제 세세토록 살아 있어 사망과 음부의 열쇠를 가졌노니"},
+    {c:1, v:19, t:"그러므로 네 본 것과 이제 있는 일과 장차 될 일을 기록하라"},
+    {c:1, v:20, t:"네 본 내 오른손에 일곱 별의 비밀과 일곱 금 촛대라 일곱 별은 일곱 교회의 사자요 일곱 촛대는 일곱 교회니라"},
+    {c:2, v:1, t:"에베소 교회의 사자에게 편지하기를 오른손에 일곱 별을 붙잡고 일곱 금 촛대 사이에 다니시는 이가 가라사대"},
+    {c:2, v:2, t:"내가 네 행위와 수고와 네 인내를 알고 또 악한 자들을 용납지 아니한 것과 자칭 사도라 하되 아닌 자들을 시험하여 그 거짓된 것을 네가 드러낸 것과"},
+    {c:2, v:3, t:"또 네가 참고 내 이름을 위하여 견디고 게으르지 아니한 것을 아노라"},
+    {c:2, v:4, t:"그러나 너를 책망할 것이 있나니 너의 처음 사랑을 버렸느니라"},
+    {c:2, v:5, t:"그러므로 어디서 떨어진 것을 생각하고 회개하여 처음 행위를 가지라 만일 그리하지 아니하고 회개치 아니하면 내가 네게 임하여 네 촛대를 그 자리에서 옮기리라"},
+    {c:2, v:6, t:"오직 네게 이것이 있으니 네가 니골라당의 행위를 미워하는도다 나도 이것을 미워하노라"},
+    {c:2, v:7, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다 이기는 그에게는 내가 하나님의 낙원에 있는 생명나무의 과실을 주어 먹게 하리라"},
+    {c:2, v:8, t:"서머나 교회의 사자에게 편지하기를 처음이요 나중이요 죽었다가 살아나신 이가 가라사대"},
+    {c:2, v:9, t:"내가 네 환난과 궁핍을 아노니 실상은 네가 부요한 자니라 자칭 유대인이라 하는 자들의 훼방도 아노니 실상은 유대인이 아니요 사단의 회라"},
+    {c:2, v:10, t:"네가 장차 받을 고난을 두려워 말라 볼찌어다 마귀가 장차 너희 가운데서 몇 사람을 옥에 던져 시험을 받게 하리니 너희가 십일 동안 환난을 받으리라 네가 죽도록 충성하라 그리하면 내가 생명의 면류관을 네게 주리라"},
+    {c:2, v:11, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다 이기는 자는 둘째 사망의 해를 받지 아니하리라"},
+    {c:2, v:12, t:"버가모 교회의 사자에게 편지하기를 좌우에 날선 검을 가진 이가 가라사대"},
+    {c:2, v:13, t:"네가 어디 사는 것을 내가 아노니 거기는 사단의 위가 있는 데라 네가 내 이름을 굳게 잡아서 내 충성된 증인 안디바가 너희 가운데 곧 사단의 거하는 곳에서 죽임을 당할 때에도 나를 믿는 믿음을 저버리지 아니하였도다"},
+    {c:2, v:14, t:"그러나 네게 두어가지 책망할 것이 있나니 거기 네게 발람의 교훈을 지키는 자들이 있도다 발람이 발락을 가르쳐 이스라엘 앞에 올무를 놓아 우상의 제물을 먹게 하였고 또 행음하게 하였느니라"},
+    {c:2, v:15, t:"이와 같이 네게도 니골라당의 교훈을 지키는 자들이 있도다"},
+    {c:2, v:16, t:"그러므로 회개하라 그리하지 아니하면 내가 네게 속히 임하여 내 입의 검으로 그들과 싸우리라"},
+    {c:2, v:17, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다 이기는 그에게는 내가 감추었던 만나를 주고 또 흰 돌을 줄 터인데 그 돌 위에 새 이름을 기록한 것이 있나니 받는 자 밖에는 그 이름을 알 사람이 없느니라"},
+    {c:2, v:18, t:"두아디라 교회의 사자에게 편지하기를 그 눈이 불꽃 같고 그 발이 빛난 주석과 같은 하나님의 아들이 가라사대"},
+    {c:2, v:19, t:"내가 네 사업과 사랑과 믿음과 섬김과 인내를 아노니 네 나중 행위가 처음 것보다 많도다"},
+    {c:2, v:20, t:"그러나 네게 책망할 일이 있노라 자칭 선지자라 하는 여자 이세벨을 네가 용납함이니 그가 내 종들을 가르쳐 꾀어 행음하게 하고 우상의 제물을 먹게 하는도다"},
+    {c:2, v:21, t:"또 내가 그에게 회개할 기회를 주었으되 그 음행을 회개하고자 아니하는도다"},
+    {c:2, v:22, t:"볼찌어다 내가 그를 침상에 던질 터이요 또 그로 더불어 간음하는 자들도 만일 그의 행위를 회개치 아니하면 큰 환난 가운데 던지고"},
+    {c:2, v:23, t:"또 내가 사망으로 그의 자녀를 죽이리니 모든 교회가 나는 사람의 뜻과 마음을 살피는 자인줄 알찌라 내가 너희 각 사람의 행위대로 갚아 주리라"},
+    {c:2, v:24, t:"두아디라에 남아 있어 이 교훈을 받지 아니하고 소위 사단의 깊은 것을 알지 못하는 너희에게 말하노니 다른 짐으로 너희에게 지울 것이 없노라"},
+    {c:2, v:25, t:"다만 너희에게 있는 것을 내가 올 때까지 굳게 잡으라"},
+    {c:2, v:26, t:"이기는 자와 끝까지 내 일을 지키는 그에게 만국을 다스리는 권세를 주리니"},
+    {c:2, v:27, t:"그가 철장을 가지고 저희를 다스려 질그릇 깨뜨리는 것과 같이 하리라 나도 내 아버지께 받은 것이 그러하니라"},
+    {c:2, v:28, t:"내가 또 그에게 새벽 별을 주리라"},
+    {c:2, v:29, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다"},
+    {c:3, v:1, t:"사데 교회의 사자에게 편지하기를 하나님의 일곱 영과 일곱 별을 가진 이가 가라사대 내가 네 행위를 아노니 네가 살았다 하는 이름은 가졌으나 죽은 자로다"},
+    {c:3, v:2, t:"너는 일깨워 그 남은바 죽게 된 것을 굳게 하라 내 하나님 앞에 네 행위의 온전한 것을 찾지 못하였노니"},
+    {c:3, v:3, t:"그러므로 네가 어떻게 받았으며 어떻게 들었는지 생각하고 지키어 회개하라 만일 일깨지 아니하면 내가 도적 같이 이르리니 어느 시에 네게 임할는지 네가 알지 못하리라"},
+    {c:3, v:4, t:"그러나 사데에 그 옷을 더럽히지 아니한 자 몇 명이 네게 있어 흰 옷을 입고 나와 함께 다니리니 그들은 합당한 자인 연고라"},
+    {c:3, v:5, t:"이기는 자는 이와 같이 흰 옷을 입을 것이요 내가 그 이름을 생명책에서 반드시 흐리지 아니하고 그 이름을 내 아버지 앞과 그 천사들 앞에서 증거하리라"},
+    {c:3, v:6, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다"},
+    {c:3, v:7, t:"빌라델비아 교회의 사자에게 편지하기를 거룩하고 진실하사 다윗의 열쇠를 가지신 이 곧 열면 닫을 사람이 없고 닫으면 열 사람이 없는 그이가 가라사대"},
+    {c:3, v:8, t:"볼찌어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라 내가 네 행위를 아노니 네가 적은 능력을 가지고도 내 말을 지키며 내 이름을 배반치 아니하였도다"},
+    {c:3, v:9, t:"보라 사단의 회 곧 자칭 유대인이라 하나 그렇지 않고 거짓말 하는 자들 중에서 몇을 네게 주어 저희로 와서 네 발앞에 절하게 하고 내가 너를 사랑하는 줄을 알게 하리라"},
+    {c:3, v:10, t:"네가 나의 인내의 말씀을 지켰은즉 내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때라"},
+    {c:3, v:11, t:"내가 속히 임하리니 네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라"},
+    {c:3, v:12, t:"이기는 자는 내 하나님 성전에 기둥이 되게 하리니 그가 결코 다시 나가지 아니하리라 내가 하나님의 이름과 하나님의 성 곧 하늘에서 내 하나님께로부터 내려 오는 새 예루살렘의 이름과 나의 새 이름을 그이 위에 기록하리라"},
+    {c:3, v:13, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다"},
+    {c:3, v:14, t:"라오디게아 교회의 사자에게 편지하기를 아멘이시요 충성되고 참된 증인이시요 하나님의 창조의 근본이신 이가 가라사대"},
+    {c:3, v:15, t:"내가 네 행위를 아노니 네가 차지도 아니하고 더우지도 아니하도다 네가 차든지 더우든지 하기를 원하노라"},
+    {c:3, v:16, t:"네가 이같이 미지근하여 더우지도 아니하고 차지도 아니하니 내 입에서 너를 토하여 내치리라"},
+    {c:3, v:17, t:"네가 말하기를 나는 부자라 부요하여 부족한 것이 없다 하나 네 곤고한 것과 가련한 것과 가난한 것과 눈 먼 것과 벌거벗은 것을 알지 못하도다"},
+    {c:3, v:18, t:"내가 너를 권하노니 내게서 불로 연단한 금을 사서 부요하게 하고 흰 옷을 사서 입어 벌거벗은 수치를 보이지 않게 하고 안약을 사서 눈에 발라 보게 하라"},
+    {c:3, v:19, t:"무릇 내가 사랑하는 자를 책망하여 징계하노니 그러므로 네가 열심을 내라 회개하라"},
+    {c:3, v:20, t:"볼찌어다 내가 문밖에 서서 두드리노니 누구든지 내 음성을 듣고 문을 열면 내가 그에게로 들어가 그와 더불어 먹고 그는 나와 더불어 먹으리라"},
+    {c:3, v:21, t:"이기는 그에게는 내가 내 보좌에 함께 앉게 하여주기를 내가 이기고 아버지 보좌에 함께 앉은 것과 같이 하리라"},
+    {c:3, v:22, t:"귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다"},
+    {c:4, v:1, t:"이 일 후에 내가 보니 하늘에 열린 문이 있는데 내가 들은바 처음에 내게 말하던 나팔소리 같은 그 음성이 가라사대 이리로 올라오라 이후에 마땅히 될 일을 내가 네게 보이리라 하시더라"},
+    {c:4, v:2, t:"내가 곧 성령에 감동하였더니 보라 하늘에 보좌를 베풀었고 그 보좌 위에 앉으신 이가 있는데"},
+    {c:4, v:3, t:"앉으신 이의 모양이 벽옥과 홍보석 같고 또 무지개가 있어 보좌에 둘렸는데 그 모양이 녹보석 같더라"},
+    {c:4, v:4, t:"또 보좌에 둘려 이십 사 보좌들이 있고 그 보좌들 위에 이십 사 장로들이 흰 옷을 입고 머리에 금면류관을 쓰고 앉았더라"},
+    {c:4, v:5, t:"보좌로부터 번개와 음성과 뇌성이 나고 보좌 앞에 일곱 등불 켠것이 있으니 이는 하나님의 일곱 영이라"},
+    {c:4, v:6, t:"보좌 앞에 수정과 같은 유리 바다가 있고 보좌 가운데와 보좌 주위에 네 생물이 있는데 앞뒤에 눈이 가득하더라"},
+    {c:4, v:7, t:"그 첫째 생물은 사자 같고 그 둘째 생물은 송아지 같고 그 세째 생물은 얼굴이 사람 같고 그 네째 생물은 날아가는 독수리 같은데"},
+    {c:4, v:8, t:"네 생물이 각각 여섯 날개가 있고 그 안과 주위에 눈이 가득하더라 그들이 밤낮 쉬지 않고 이르기를 거룩하다 거룩하다 거룩하다 주 하나님 곧 전능하신 이여 전에도 계셨고 이제도 계시고 장차 오실 자라 하고"},
+    {c:4, v:9, t:"그 생물들이 영광과 존귀와 감사를 보좌에 앉으사 세세토록 사시는 이에게 돌릴 때에"},
+    {c:4, v:10, t:"이십 사 장로들이 보좌에 앉으신 이 앞에 엎드려 세세토록 사시는 이에게 경배하고 자기의 면류관을 보좌 앞에 던지며 가로되"},
+    {c:4, v:11, t:"우리 주 하나님이여 영광과 존귀와 능력을 받으시는 것이 합당하오니 주께서 만물을 지으신지라 만물이 주의 뜻대로 있었고 또 지으심을 받았나이다 하더라"},
+    {c:5, v:1, t:"내가 보매 보좌에 앉으신 이의 오른손에 책이 있으니 안팎으로 썼고 일곱 인으로 봉하였더라"},
+    {c:5, v:2, t:"또 봄에 힘있는 천사가 큰 음성으로 외치기를 누가 책을 펴며 그 인을 떼기에 합당하냐 하니"},
+    {c:5, v:3, t:"하늘 위에나 땅 위에나 땅 아래에 능히 책을 펴거나 보거나 할 이가 없더라"},
+    {c:5, v:4, t:"이 책을 펴거나 보거나 하기에 합당한 자가 보이지 않기로 내가 크게 울었더니"},
+    {c:5, v:5, t:"장로 중에 하나가 내게 말하되 울지 말라 유대 지파의 사자 다윗의 뿌리가 이기었으니 이 책과 그 일곱 인을 떼시리라 하더라"},
+    {c:5, v:6, t:"내가 또 보니 보좌와 네 생물과 장로들 사이에 어린 양이 섰는데 일찍 죽임을 당한것 같더라 일곱 뿔과 일곱 눈이 있으니 이 눈은 온 땅에 보내심을 입은 하나님의 일곱 영이더라"},
+    {c:5, v:7, t:"어린 양이 나아와서 보좌에 앉으신 이의 오른손에서 책을 취하시니라"},
+    {c:5, v:8, t:"책을 취하시매 네 생물과 이십 사 장로들이 어린 양 앞에 엎드려 각각 거문고와 향이 가득한 금 대접을 가졌으니 이 향은 성도의 기도들이라"},
+    {c:5, v:9, t:"새 노래를 노래하여 가로되 책을 가지시고 그 인봉을 떼기에 합당하시도다 일찍 죽임을 당하사 각 족속과 방언과 백성과 나라 가운데서 사람들을 피로 사서 하나님께 드리시고"},
+    {c:5, v:10, t:"저희로 우리 하나님 앞에서 나라와 제사장을 삼으셨으니 저희가 땅에서 왕노릇하리로다 하더라"},
+    {c:5, v:11, t:"내가 또 보고 들으매 보좌와 생물들과 장로들을 둘러 선 많은 천사의 음성이 있으니 그 수가 만만이요 천천이라"},
+    {c:5, v:12, t:"큰 음성으로 가라사대 죽임을 당하신 어린 양이 능력과 부와 지혜와 힘과 존귀와 영광과 찬송을 받으시기에 합당하도다 하더라"},
+    {c:5, v:13, t:"내가 또 들으니 하늘 위에와 땅 위에와 땅 아래와 바다 위에와 또 그 가운데 모든 만물이 가로되 보좌에 앉으신 이와 어린 양에게 찬송과 존귀와 영광과 능력을 세세토록 돌릴찌어다 하니"},
+    {c:5, v:14, t:"네 생물이 가로되 아멘 하고 장로들은 엎드려 경배하더라"},
+    {c:6, v:1, t:"내가 보매 어린 양이 일곱 인 중에 하나를 떼시는 그 때에 내가 들으니 네 생물 중에 하나가 우뢰소리 같이 말하되 오라 하기로"},
+    {c:6, v:2, t:"내가 이에 보니 흰 말이 있는데 그 탄 자가 활을 가졌고 면류관을 받고 나가서 이기고 또 이기려고 하더라"},
+    {c:6, v:3, t:"둘째 인을 떼실 때에 내가 들으니 둘째 생물이 말하되 오라 하더니"},
+    {c:6, v:4, t:"이에 붉은 다른 말이 나오더라 그 탄 자가 허락을 받아 땅에서 화평을 제하여 버리며 서로 죽이게 하고 또 큰 칼을 받았더라"},
+    {c:6, v:5, t:"세째 인을 떼실 때에 내가 들으니 세째 생물이 말하되 오라 하기로 내가 보니 검은 말이 나오는데 그 탄 자가 손에 저울을 가졌더라"},
+    {c:6, v:6, t:"내가 네 생물 사이로서 나는듯하는 음성을 들으니 가로되 한 데나리온에 밀 한 되요 한 데나리온에 보리 석 되로다 또 감람유와 포도주는 해치 말라 하더라"},
+    {c:6, v:7, t:"네째 인을 떼실 때에 내가 네째 생물의 음성을 들으니 가로되 오라 하기로"},
+    {c:6, v:8, t:"내가 보매 청황색 말이 나오는데 그 탄 자의 이름은 사망이니 음부가 그 뒤를 따르더라 저희가 땅 사분 일의 권세를 얻어 검과 흉년과 사망과 땅의 짐승으로써 죽이더라"},
+    {c:6, v:9, t:"다섯째 인을 떼실 때에 내가 보니 하나님의 말씀과 저희의 가진 증거를 인하여 죽임을 당한 영혼들이 제단 아래 있어"},
+    {c:6, v:10, t:"큰 소리로 불러 가로되 거룩하고 참되신 대주재여 땅에 거하는 자들을 심판하여 우리 피를 신원하여 주지 아니하시기를 어느 때까지 하시려나이까 하니"},
+    {c:6, v:11, t:"각각 저희에게 흰 두루마기를 주시며 가라사대 아직 잠시 동안 쉬되 저희 동무 종들과 형제들도 자기처럼 죽임을 받아 그 수가 차기까지 하라 하시더라"},
+    {c:6, v:12, t:"내가 보니 여섯째 인을 떼실 때에 큰 지진이 나며 해가 총담 같이 검어지고 달은 온통 피 같이 되며"},
+    {c:6, v:13, t:"하늘의 별들이 무화과나무가 대풍에 흔들려 선 과실이 떨어지는것 같이 땅에 떨어지며"},
+    {c:6, v:14, t:"하늘은 종이가 말리는것 같이 떠나가고 각 산과 섬이 제 자리에서 옮기우매"},
+    {c:6, v:15, t:"땅의 임금들과 왕족들과 장군들과 부자들과 강한 자들과 각 종과 자주자가 굴과 산 바위 틈에 숨어"},
+    {c:6, v:16, t:"산과 바위에게 이르되 우리 위에 떨어져 보좌에 앉으신 이의 낯에서와 어린 양의 진노에서 우리를 가리우라"},
+    {c:6, v:17, t:"그들의 진노의 큰 날이 이르렀으니 누가 능히 서리요 하더라"}
+];
+
+const gameArea = document.getElementById('game-area');
+const verseDisplay = document.getElementById('verse-display');
+const hintDisplay = document.getElementById('hint-display');
+const displayChapter = document.getElementById('display-chapter');
+const inpVerse = document.getElementById('inp-verse');
+const btnSubmit = document.getElementById('btn-submit');
+const hpBar = document.getElementById('hp-bar');
+const graceFill = document.getElementById('grace-fill');
+const archer = document.getElementById('archer');
+const castle = document.getElementById('castle');
+const stageGrid = document.getElementById('stage-grid');
+const goldTxt = document.getElementById('gold-txt');
+const atkTxt = document.getElementById('atk-txt');
+const weaponTxt = document.getElementById('weapon-txt');
+const progressTxt = document.getElementById('progress-txt');
+const comboMultContainer = document.getElementById('combo-multiplier-container');
+const comboMultTxt = document.getElementById('combo-multiplier');
+const equippedCharEl = document.getElementById('equipped-char-el');
+
+const badgeSlow = document.getElementById('badge-slow');
+const badgeLight = document.getElementById('badge-light');
+const badgeTrump = document.getElementById('badge-trump');
+const badgeBowl = document.getElementById('badge-bowl');
+
+const CHARACTERS = [
+    { id: 'c1', name: '은혜의 수호자', desc: '스테이지별 처치 목표 몬스터 수 절반 감소', img: 'images/char1.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c2', name: '선지자의 눈', desc: '실전 모드 시 초반 연속 3번 정답 힌트 제공', img: 'images/char2.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c3', name: '심판의 철퇴', desc: '공격당한 몬스터가 화면 맨 뒤로 밀려남', img: 'images/char3.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c4', name: '광풍의 인도자', desc: '나오는 몬스터 속도 2배 (대신 처치 시 골드 2배)', img: 'images/char4.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c5', name: '진노의 불꽃', desc: '초과 데미지로 처치 시 주변 몬스터들에게 폭발 피해', img: 'images/char5.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c6', name: '심판의 사슬', desc: '적을 한 방에 처치 시, 다음 적에게 자동 연쇄 공격', img: 'images/char6.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c7', name: '흡혈의 일격', desc: '몬스터를 처치할 때마다 성벽 체력 2 회복', img: 'images/char7.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c8', name: '맹공의 투사', desc: '콤보 데미지 증폭 제한 해제 (더 강력한 데미지)', img: 'images/char8.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c9', name: '성령의 그릇', desc: '은혜(성령의 폭풍) 게이지 매초 자동 충전', img: 'images/char9.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c10', name: '은혜로운 방패', desc: '오답 입력 시 콤보가 0이 되지 않고 1만 감소', img: 'images/char10.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c11', name: '만나의 축복', desc: '정답을 맞힐 때마다 즉시 5골드 추가 획득', img: 'images/char11.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c12', name: '믿음의 방패', desc: '스테이지 시작 시 보호막(Shield) 50 부여', img: 'images/char12.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c13', name: '진리의 양날검', desc: '일반 몬스터 타격 시 15% 확률로 즉사', img: 'images/char13.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c14', name: '영원의 시계', desc: '정답 시 모든 적 0.5초간 50% 느려짐', img: 'images/char14.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c15', name: '관통하는 빛', desc: '기본 무기 타격수(관통력) +1 증가', img: 'images/char15.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c16', name: '용살자', desc: '보스에게 무조건 2.5배 증폭 데미지', img: 'images/char16.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c17', name: '거룩한 영역', desc: '성벽 근처 접근 적들에게 초당 지속 화상 데미지', img: 'images/char17.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c18', name: '천둥의 부름', desc: '5콤보 달성 시마다 공짜 번개 자동 발동', img: 'images/char18.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c19', name: '마르지 않는 대접', desc: '아이템 스킬 사용 시 30% 확률로 미소모', img: 'images/char19.png', x: 25, y: 130, w: 70, h: 70 },
+    { id: 'c20', name: '부활의 기적', desc: '죽을 위기 시 1회 한정 50% 부활 및 적 밀쳐냄', img: 'images/char20.png', x: 25, y: 130, w: 70, h: 70 }
+];
+
+const stageConfig = [
+    { id: 1, target: 10, hpBase: 20, spdBase: 12 }, 
+    { id: 2, target: 15, hpBase: 35, spdBase: 13 }, 
+    { id: 3, target: 20, hpBase: 50, spdBase: 14 }, 
+    { id: 4, target: 25, hpBase: 70, spdBase: 15 }, 
+    { id: 5, target: 30, hpBase: 90, spdBase: 16 }, 
+    { id: 6, target: 35, hpBase: 120, spdBase: 17 }, 
+    { id: 7, target: 40, hpBase: 150, spdBase: 18 }, 
+    { id: 8, target: 45, hpBase: 180, spdBase: 19 }, 
+    { id: 9, target: 50, hpBase: 220, spdBase: 20 }, 
+    { id: 10, target: 60, hpBase: 300, spdBase: 25 } 
+];
+
+let defaultSave = { 
+    unlockedStage: 1, gold: 0, attackPower: 1, 
+    slowItems: 3, lightnings: 0, trumpets: 0, bowls: 0, 
+    characters: [], equippedChar: null,
+    unlockedVerses: [], bestInfinityScore: 0, verseCounts: {},
+    energy: 0, lives: 0
+};
+let saveData;
+try { saveData = JSON.parse(localStorage.getItem('revDefSaveV11')); } catch(e) { saveData = null; }
+
+if (!saveData) {
+    let oldSave = JSON.parse(localStorage.getItem('revDefSaveV10'));
+    saveData = oldSave ? { ...defaultSave, ...oldSave } : defaultSave;
+}
+if (!saveData.unlockedVerses) saveData.unlockedVerses = [];
+if (!saveData.bestInfinityScore) saveData.bestInfinityScore = 0;
+if (!saveData.verseCounts) saveData.verseCounts = {};
+if (saveData.energy === undefined) saveData.energy = 0;
+if (saveData.lives === undefined) saveData.lives = 0;
+
+function saveGame() { localStorage.setItem('revDefSaveV11', JSON.stringify(saveData)); }
+function showAutoSaveNotice() { const notice = document.getElementById('auto-save-notice'); notice.style.opacity = 1; setTimeout(() => notice.style.opacity = 0, 2000); }
+
+function exportSave() { 
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(saveData)); 
+    const dlAnchor = document.createElement('a'); dlAnchor.setAttribute("href", dataStr); dlAnchor.setAttribute("download", "revelation_defense_save.json"); 
+    document.body.appendChild(dlAnchor); dlAnchor.click(); dlAnchor.remove(); alert("세이브 파일이 다운로드되었습니다."); 
+}
+
+function importSave(event) { 
+    const file = event.target.files[0]; if (!file) return; 
+    const reader = new FileReader(); 
+    reader.onload = function(e) { 
+        try { 
+            const importedData = JSON.parse(e.target.result); 
+            if(importedData.unlockedStage !== undefined) { 
+                saveData = { ...defaultSave, ...importedData };
+                saveGame(); renderTopStats(); renderStageGrid(); updateShopUI(); updateEquippedCharDisplay(); updateRangeSelector();
+                alert("세이브 파일을 성공적으로 불러왔습니다!"); 
+            } 
+        } catch (err) { alert("파일 읽기 오류: " + err.message); } 
+    }; 
+    reader.readAsText(file); 
+}
+
+setInterval(() => { if(isPlaying && !isPaused) { saveGame(); showAutoSaveNotice(); } }, 30000);
+
+let isPlaying = false, isPaused = false, playingStageId = 1, currentStageObj = null, currentStageTarget = 0, hp = 100;
+let combo = 0, damageMultiplier = 1.0, grace = 0, spawnedCount = 0, killedCount = 0, earnedGoldThisStage = 0; 
+let currentQuiz = null, filteredData = [], currentDifficulty = 'normal', chosenWeapon = 'bow'; 
+let monsters = [], arrows = [], lastTime = 0, slowTimer = 0, skill2Hints = 0; 
+let wrongAnswersThisSession = [], gameSpeedMultiplier = 1.0; 
+let currentQuizType = 'number'; 
+let currentShield = 0, usedC20 = false; 
+let gachaTimer = 0, gachaInterval, gachaWord = "", gachaVerseText = "";
+
+const CASTLE_X = 100; 
+const MONSTER_GAP = 100; // 💡 [핵심] 몬스터 간격 100px 강제 고정
+
+function init() {
+    renderTopStats(); renderStageGrid(); updateEquippedCharDisplay(); updateRangeSelector();
+    
+    document.getElementById('btn-open-shop').addEventListener('click', () => { updateShopUI(); document.getElementById('shop-modal').classList.remove('hidden'); });
+    document.getElementById('btn-close-shop').addEventListener('click', () => document.getElementById('shop-modal').classList.add('hidden'));
+    document.getElementById('btn-info').addEventListener('click', () => document.getElementById('info-modal').classList.remove('hidden'));
+    document.getElementById('btn-close-info').addEventListener('click', () => document.getElementById('info-modal').classList.add('hidden'));
+    document.getElementById('btn-open-hero').addEventListener('click', () => { renderHeroUI(); document.getElementById('hero-modal').classList.remove('hidden'); });
+    document.getElementById('btn-close-hero').addEventListener('click', () => document.getElementById('hero-modal').classList.add('hidden'));
+    document.getElementById('btn-open-dex').addEventListener('click', () => { renderDexUI(); document.getElementById('dex-modal').classList.remove('hidden'); });
+    document.getElementById('btn-close-dex').addEventListener('click', () => document.getElementById('dex-modal').classList.add('hidden'));
+    document.getElementById('btn-open-gacha').addEventListener('click', openGacha);
+    document.getElementById('btn-close-gacha').addEventListener('click', closeGacha);
+    document.getElementById('btn-submit-gacha').addEventListener('click', submitGachaGuess);
+    document.getElementById('inp-gacha-guess').addEventListener('keydown', (e) => { if(e.key === 'Enter') submitGachaGuess(); });
+    document.getElementById('btn-pause').addEventListener('click', togglePause);
+    document.getElementById('btn-resume').addEventListener('click', togglePause);
+    document.getElementById('btn-quit').addEventListener('click', quitGame);
+    document.getElementById('btn-export-save').addEventListener('click', exportSave);
+    document.getElementById('file-import-save').addEventListener('change', importSave);
+    document.getElementById('btn-result-main').addEventListener('click', () => { document.getElementById('screen-result').classList.add('hidden'); renderStageGrid(); document.getElementById('screen-start').classList.remove('hidden'); });
+    document.getElementById('btn-result-next').addEventListener('click', () => { document.getElementById('screen-result').classList.add('hidden'); if (playingStageId === 'infinity') startStage('infinity'); else if (playingStageId < 10) startStage(playingStageId + 1); else document.getElementById('screen-start').classList.remove('hidden'); });
+    
+    document.getElementById('btn-buy-atk').addEventListener('click', () => buyItem('atk'));
+    document.getElementById('btn-buy-slow').addEventListener('click', () => buyItem('slow'));
+    document.getElementById('btn-buy-light').addEventListener('click', () => buyItem('light'));
+    document.getElementById('btn-buy-trump').addEventListener('click', () => buyItem('trump'));
+    document.getElementById('btn-buy-bowl').addEventListener('click', () => buyItem('bowl'));
+    document.getElementById('btn-buy-life').addEventListener('click', () => buyItem('life'));
+    
+    btnSubmit.addEventListener('click', checkAnswer);
+    inpVerse.addEventListener('keydown', (e) => { if(isPlaying && e.key === 'Enter') checkAnswer(); });
+    document.getElementById('btn-skill-slow').addEventListener('click', useTimeSlow);
+    document.getElementById('btn-skill-light').addEventListener('click', useLightning);
+    document.getElementById('btn-skill-trump').addEventListener('click', useTrumpet);
+    document.getElementById('btn-skill-bowl').addEventListener('click', useBowl);
+    document.getElementById('btn-skill-grace').addEventListener('click', useGraceSkill);
+    
+    document.addEventListener('keydown', (e) => {
+        if(!isPlaying || isPaused) return;
+        let isTypingText = (currentQuizType === 'blank' && document.activeElement === document.getElementById('inp-verse'));
+        if(e.code === 'ControlLeft' || e.code === 'ControlRight' || e.key === 'Control') { e.preventDefault(); useGraceSkill(); }
+        if(e.code === 'ShiftLeft' || e.code === 'ShiftRight') { e.preventDefault(); useTimeSlow(); }
+        if(!isTypingText) {
+            if(e.code === 'KeyZ' || e.key === 'z') { e.preventDefault(); useLightning(); }
+            if(e.code === 'KeyX' || e.key === 'x') { e.preventDefault(); useTrumpet(); }
+            if(e.code === 'KeyC' || e.key === 'c') { e.preventDefault(); useBowl(); }
+        }
+    });
+}
+
+function setGameSpeed(speed) {
+    gameSpeedMultiplier = speed;
+    document.querySelectorAll('.speed-btn').forEach(btn => btn.classList.remove('active'));
+    if(speed === 0.25) document.getElementById('btn-speed-025').classList.add('active');
+    if(speed === 0.5) document.getElementById('btn-speed-05').classList.add('active');
+    if(speed === 1.0) document.getElementById('btn-speed-10').classList.add('active');
+    if(speed === 2.0) document.getElementById('btn-speed-20').classList.add('active');
+    if(speed === 3.0) document.getElementById('btn-speed-30').classList.add('active');
+}
+
+function renderTopStats() {
+    goldTxt.innerText = saveData.gold; 
+    document.getElementById('energy-txt').innerText = saveData.energy;
+    document.getElementById('life-txt').innerText = saveData.lives;
+    atkTxt.innerText = saveData.attackPower; badgeSlow.innerText = saveData.slowItems; 
+    badgeLight.innerText = saveData.lightnings; badgeTrump.innerText = saveData.trumpets; badgeBowl.innerText = saveData.bowls;
+}
+
+function updateRangeSelector() {
+    const selRange = document.getElementById('sel-range');
+    const lockMsg = document.getElementById('range-lock-msg');
+    if (saveData.unlockedStage <= 6) { selRange.disabled = true; lockMsg.style.display = 'block'; } 
+    else { selRange.disabled = false; lockMsg.style.display = 'none'; }
+}
+
+function renderStageGrid() {
+    stageGrid.innerHTML = '';
+    for(let i=1; i<=10; i++) {
+        const btn = document.createElement('button'); btn.className = 'stage-btn' + (i > saveData.unlockedStage ? ' locked' : '');
+        btn.innerText = `Stage ${i}`;
+        if(i <= saveData.unlockedStage) { btn.onclick = () => startStage(i); }
+        stageGrid.appendChild(btn);
+    }
+    if(saveData.unlockedStage > 10) {
+        const infBtn = document.createElement('button'); infBtn.className = 'stage-btn infinity';
+        infBtn.innerHTML = `🔥무한돌파<br><span style="font-size:0.75rem; font-weight:normal;">최고: ${saveData.bestInfinityScore}</span>`;
+        infBtn.onclick = () => startStage('infinity'); stageGrid.appendChild(infBtn);
+    }
+    updateRangeSelector();
+}
+
+function renderDexUI() {
+    document.getElementById('dex-total').innerText = bibleData.length;
+    document.getElementById('dex-unlocked').innerText = saveData.unlockedVerses.length;
+    document.getElementById('dex-percent').innerText = Math.floor((saveData.unlockedVerses.length / bibleData.length) * 100) + '%';
+    const list = document.getElementById('dex-list'); list.innerHTML = '';
+    bibleData.forEach(data => {
+        const verseId = `${data.c}-${data.v}`; const isUnlocked = saveData.unlockedVerses.includes(verseId);
+        const solveCount = saveData.verseCounts && saveData.verseCounts[verseId] ? saveData.verseCounts[verseId] : 0;
+        const item = document.createElement('div'); item.className = `dex-item ${isUnlocked ? 'unlocked' : 'locked'}`;
+        const countBadge = isUnlocked ? `<span class="dex-count-badge">${solveCount}회 완성</span>` : '';
+        const chapText = `<span class="dex-chapter">[ 요한계시록 ${data.c}장 ${data.v}절 ]</span> ${countBadge}`;
+        const textContent = isUnlocked ? `"${data.t}"` : "??? (스테이지에서 정답을 맞혀 해금하세요)";
+        item.innerHTML = chapText + `<span class="dex-text">${textContent}</span>`; list.appendChild(item);
+    });
+}
+
+function updateEquippedCharDisplay() {
+    if (!saveData.equippedChar) { equippedCharEl.classList.add('hidden'); } else {
+        let charData = CHARACTERS.find(c => c.id === saveData.equippedChar);
+        if (charData) {
+            equippedCharEl.style.backgroundImage = `url('${charData.img}')`; equippedCharEl.style.left = charData.x + 'px';
+            equippedCharEl.style.bottom = charData.y + 'px'; equippedCharEl.style.width = charData.w + 'px';
+            equippedCharEl.style.height = charData.h + 'px'; equippedCharEl.classList.remove('hidden');
+        }
+    }
+}
+
+function renderHeroUI() {
+    const grid = document.getElementById('hero-grid'); grid.innerHTML = '';
+    CHARACTERS.forEach(char => {
+        const isOwned = saveData.characters.includes(char.id); const isEquipped = saveData.equippedChar === char.id;
+        const card = document.createElement('div'); card.className = `hero-card ${isOwned ? 'owned' : 'unowned'} ${isEquipped ? 'equipped' : ''}`;
+        card.innerHTML = `<div class="hero-icon" style="background-image: url('${char.img}');"></div><div style="font-weight: bold; font-size: 0.95rem; color: #fff; margin-bottom: 4px;">${char.name}</div><div style="font-size: 0.75rem; color: #9ca3af; line-height: 1.2; margin-bottom: 8px;">${char.desc}</div>`;
+        const btn = document.createElement('button');
+        if (!isOwned) { btn.innerText = "미보유"; btn.style.background = "#4b5563"; btn.disabled = true; btn.style.padding = "4px 8px"; btn.style.fontSize = "0.8rem"; } 
+        else if (isEquipped) { btn.innerText = "장착 해제"; btn.style.background = "#ef4444"; btn.style.padding = "4px 8px"; btn.style.fontSize = "0.8rem"; btn.onclick = () => { saveData.equippedChar = null; saveGame(); renderHeroUI(); updateEquippedCharDisplay(); }; } 
+        else { btn.innerText = "장착"; btn.style.background = "#10b981"; btn.style.padding = "4px 8px"; btn.style.fontSize = "0.8rem"; btn.onclick = () => { saveData.equippedChar = char.id; saveGame(); renderHeroUI(); updateEquippedCharDisplay(); }; }
+        card.appendChild(btn); grid.appendChild(card);
+    });
+}
+
+function openGacha() {
+    if(saveData.gold < 100) { alert("골드가 부족합니다! (100G 필요)"); return; }
+    saveData.gold -= 100; saveGame(); renderTopStats();
+    let q = bibleData[Math.floor(Math.random() * bibleData.length)]; gachaVerseText = q.t;
+    let rawWords = gachaVerseText.split(" "); let validWords = [];
+    rawWords.forEach(w => { let clean = w.replace(/[^\w\s가-힣]/g, ''); if(clean.length >= 2) validWords.push(clean); });
+    gachaWord = validWords.length === 0 ? rawWords[0].replace(/[^\w\s가-힣]/g, '') : validWords[Math.floor(Math.random() * validWords.length)];
+    document.getElementById('gacha-modal').classList.remove('hidden'); startGachaReadMode();
+}
+function closeGacha() { clearInterval(gachaInterval); document.getElementById('gacha-modal').classList.add('hidden'); }
+function startGachaReadMode() {
+    document.getElementById('gacha-read-ui').classList.remove('hidden'); document.getElementById('gacha-guess-ui').classList.add('hidden'); 
+    document.getElementById('gacha-verse-full').innerText = gachaVerseText;
+    let timeLeft = 10; document.getElementById('gacha-timer').innerText = timeLeft;
+    gachaInterval = setInterval(() => { timeLeft--; document.getElementById('gacha-timer').innerText = timeLeft; if(timeLeft <= 0) { clearInterval(gachaInterval); startGachaGuessMode(); } }, 1000);
+}
+function startGachaGuessMode() {
+    document.getElementById('gacha-read-ui').classList.add('hidden'); document.getElementById('gacha-guess-ui').classList.remove('hidden');
+    let hiddenText = gachaVerseText.split(" ").map(w => { return w.replace(/[^\w\s가-힣]/g, '') === gachaWord ? "[ 빈 칸 ]" : w; }).join(" ");
+    document.getElementById('gacha-verse-hidden').innerText = hiddenText; document.getElementById('inp-gacha-guess').value = ""; document.getElementById('inp-gacha-guess').focus();
+}
+function submitGachaGuess() {
+    let ans = document.getElementById('inp-gacha-guess').value.trim();
+    if (ans === gachaWord) {
+        let unownedChars = CHARACTERS.filter(c => !saveData.characters.includes(c.id));
+        if(unownedChars.length === 0) { alert("정답입니다! 🎉\n하지만 모든 영웅을 이미 보유하고 있어 150G를 돌려받습니다."); saveData.gold += 150; } 
+        else { 
+            let pulled = unownedChars[Math.floor(Math.random() * unownedChars.length)]; saveData.characters.push(pulled.id); 
+            if(!saveData.equippedChar) { saveData.equippedChar = pulled.id; updateEquippedCharDisplay(); } 
+            alert(`✨정답입니다!✨\n새로운 영웅 [ ${pulled.name} ] 획득!\n\n능력: ${pulled.desc}`); 
+        }
+        saveGame(); renderTopStats();
+    } else { alert(`틀렸습니다! 앗, 정답은 [ ${gachaWord} ] 였습니다.`); }
+    closeGacha();
+}
+
+function updateShopUI() {
+    document.getElementById('shop-gold-txt').innerText = saveData.gold; 
+    document.getElementById('shop-energy-txt').innerText = saveData.energy; 
+    document.getElementById('shop-life-cnt').innerText = saveData.lives;
+    document.getElementById('shop-atk-lv').innerText = saveData.attackPower; 
+    document.getElementById('shop-slow-cnt').innerText = saveData.slowItems; 
+    document.getElementById('shop-light-cnt').innerText = saveData.lightnings; 
+    document.getElementById('shop-trump-cnt').innerText = saveData.trumpets; 
+    document.getElementById('shop-bowl-cnt').innerText = saveData.bowls;
+    
+    let atkCost = saveData.attackPower * 50; 
+    document.getElementById('btn-buy-atk').innerText = `${atkCost} G`; document.getElementById('btn-buy-atk').disabled = (saveData.gold < atkCost); 
+    document.getElementById('btn-buy-slow').disabled = (saveData.gold < 30); document.getElementById('btn-buy-light').disabled = (saveData.gold < 20); 
+    document.getElementById('btn-buy-trump').disabled = (saveData.gold < 40); document.getElementById('btn-buy-bowl').disabled = (saveData.gold < 80);
+    document.getElementById('btn-buy-life').disabled = (saveData.energy < 50);
+}
+
+function buyItem(type) {
+    if(type === 'atk') { let cost = saveData.attackPower * 50; if(saveData.gold >= cost) { saveData.gold -= cost; saveData.attackPower++; } }
+    else if (type === 'slow' && saveData.gold >= 30) { saveData.gold -= 30; saveData.slowItems++; } 
+    else if (type === 'light' && saveData.gold >= 20) { saveData.gold -= 20; saveData.lightnings++; } 
+    else if (type === 'trump' && saveData.gold >= 40) { saveData.gold -= 40; saveData.trumpets++; } 
+    else if (type === 'bowl' && saveData.gold >= 80) { saveData.gold -= 80; saveData.bowls++; }
+    else if (type === 'life' && saveData.energy >= 50) { saveData.energy -= 50; saveData.lives++; }
+    saveGame(); renderTopStats(); updateShopUI();
+}
+
+function startStage(stageId) {
+    playingStageId = stageId; 
+    const quizTypeEl = document.querySelector('input[name="quiz-type"]:checked');
+    currentQuizType = quizTypeEl ? quizTypeEl.value : 'number';
+    
+    if (stageId === 'infinity') { currentStageTarget = Infinity; } 
+    else {
+        currentStageObj = stageConfig.find(s => s.id === stageId);
+        currentStageTarget = currentStageObj.target; 
+        if(saveData.equippedChar === 'c1') currentStageTarget = Math.ceil(currentStageTarget / 2);
+    }
+    
+    document.getElementById('screen-start').classList.add('hidden'); document.getElementById('btn-pause').classList.remove('hidden'); document.getElementById('btn-quit').classList.remove('hidden'); 
+    document.getElementById('in-game-stats').style.display = 'flex'; document.getElementById('skill-bar').style.display = 'flex'; document.getElementById('speed-controls').classList.remove('hidden');
+    
+    chosenWeapon = document.querySelector('input[name="start-weapon"]:checked').value; 
+    currentDifficulty = document.querySelector('input[name="difficulty"]:checked').value;
+    
+    if (stageId !== 'infinity' && stageId <= 6) {
+        filteredData = bibleData.filter(d => d.c === stageId);
+        setTimeout(() => { showFloatingText(`계시록 ${stageId}장 진행 중`, gameArea.clientWidth/2, gameArea.clientHeight/2, 'floating-text', 'var(--gold)'); }, 500);
+    } else {
+        const range = document.getElementById('sel-range').value;
+        if (range === '1-3') filteredData = bibleData.filter(d => d.c >= 1 && d.c <= 3); 
+        else if (range === '4-6') filteredData = bibleData.filter(d => d.c >= 4 && d.c <= 6); 
+        else if (range === '1-6') filteredData = [...bibleData]; 
+        else filteredData = bibleData.filter(d => d.c === parseInt(range)); 
+    }
+    if (filteredData.length === 0) filteredData = [...bibleData];
+    
+    isPlaying = true; isPaused = false; hp = 100; grace = 0; combo = 0; damageMultiplier = 1.0; 
+    spawnedCount = 0; killedCount = 0; slowTimer = 0; earnedGoldThisStage = 0; wrongAnswersThisSession = []; 
+    currentShield = (saveData.equippedChar === 'c12') ? 50 : 0;
+    usedC20 = false;
+    skill2Hints = (saveData.equippedChar === 'c2' && currentDifficulty === 'normal') ? 3 : 0;
+    
+    monsters.forEach(m => m.el.remove()); monsters = []; arrows.forEach(a => a.el.remove()); arrows = [];
+    document.getElementById('boss-warning').style.display = 'none';
+    
+    updateInGameUI(); nextQuiz(); lastTime = performance.now(); requestAnimationFrame(gameLoop);
+}
+
+function togglePause() { 
+    if(!isPlaying) return; isPaused = !isPaused; 
+    if(isPaused) { document.getElementById('pause-overlay').style.display = 'flex'; } 
+    else { document.getElementById('pause-overlay').style.display = 'none'; lastTime = performance.now(); requestAnimationFrame(gameLoop); inpVerse.focus(); } 
+}
+function quitGame() { if(!confirm("스테이지를 포기하시겠습니까?")) return; endGame(false); }
+
+function endGame(isClear) {
+    isPlaying = false; 
+    document.getElementById('btn-pause').classList.add('hidden'); document.getElementById('btn-quit').classList.add('hidden'); 
+    document.getElementById('in-game-stats').style.display = 'none'; document.getElementById('skill-bar').style.display = 'none'; 
+    document.getElementById('speed-controls').classList.add('hidden'); document.getElementById('boss-warning').style.display = 'none';
+    
+    const screen = document.getElementById('screen-result'); const title = document.getElementById('result-title'); 
+    const desc = document.getElementById('result-desc'); const nextBtn = document.getElementById('btn-result-next');
+    const wrongNotesArea = document.getElementById('wrong-notes-area');
+    
+    let extraText = "";
+    if (playingStageId === 'infinity') {
+        title.innerText = "무한 돌파 종료"; title.style.background = "linear-gradient(to right, #ef4444, #fca5a5)"; title.style.webkitBackgroundClip = "text";
+        if (killedCount > saveData.bestInfinityScore) { saveData.bestInfinityScore = killedCount; extraText = `<br><span style="color:#10b981; font-weight:bold;">🎉 신기록 달성!</span>`; saveGame(); renderStageGrid(); }
+        desc.innerHTML = `최종 처치 수: <span style="color:red; font-weight:bold;">${killedCount}</span>${extraText}<br>획득 골드: <span style="color:var(--gold); font-weight:bold;">${earnedGoldThisStage} G</span>`;
+        nextBtn.innerText = "다시하기"; nextBtn.style.display = 'inline-block';
+    } else if(isClear) {
+        title.innerText = "스테이지 클리어!"; title.style.background = "linear-gradient(to right, #10b981, #34d399)"; title.style.webkitBackgroundClip = "text";
+        let diffText = currentDifficulty === 'normal' ? '<br><span style="color:#10b981; font-size:0.9rem;">(실전 모드 보너스 적용)</span>' : '';
+        desc.innerHTML = `성벽 방어 성공!<br>획득 골드: <span style="color:var(--gold); font-weight:bold;">${earnedGoldThisStage} G</span>${diffText}`;
+        if(playingStageId >= saveData.unlockedStage && playingStageId < 10) { saveData.unlockedStage = playingStageId + 1; saveGame(); renderStageGrid(); }
+        nextBtn.innerText = "다음 스테이지"; nextBtn.style.display = (playingStageId < 10) ? 'inline-block' : 'none';
+    } else {
+        title.innerText = "방어 실패..."; title.style.background = "linear-gradient(to right, #ef4444, #b91c1c)"; title.style.webkitBackgroundClip = "text";
+        desc.innerHTML = `몬스터가 성벽을 파괴했습니다.<br>획득 골드: <span style="color:var(--gold); font-weight:bold;">${earnedGoldThisStage} G</span>`;
+        nextBtn.style.display = 'none';
+    }
+    
+    if (wrongAnswersThisSession.length > 0) {
+        wrongNotesArea.classList.remove('hidden');
+        let notesHtml = `<h4 style="margin:0 0 10px 0; color:#ef4444; border-bottom:1px solid #ef4444; padding-bottom:5px;">📝 오답 노트</h4>`;
+        wrongAnswersThisSession.forEach(q => { notesHtml += `<div class="wrong-note-item"><span class="wrong-note-badge">${q.c}장 ${q.v}절</span>${q.t}</div>`; });
+        wrongNotesArea.innerHTML = notesHtml;
+    } else { wrongNotesArea.classList.add('hidden'); }
+    screen.classList.remove('hidden');
+}
+
+// 💡 [핵심] 몬스터 상시 6마리 큐(Queue) 시스템
+function spawnMonster() {
+    if(playingStageId !== 'infinity' && spawnedCount >= currentStageTarget) return;
+
+    let isBoss, maxHp, speed;
+    if (playingStageId === 'infinity') {
+        let wave = Math.floor(spawnedCount / 10); isBoss = (spawnedCount > 0 && spawnedCount % 10 === 9); 
+        maxHp = 20 + (wave * 20); if (isBoss) maxHp *= 5; speed = 15 + (wave * 3);
+    } else {
+        isBoss = (spawnedCount === currentStageTarget - 1); 
+        maxHp = isBoss ? currentStageObj.hpBase * 5 : currentStageObj.hpBase; 
+        speed = currentStageObj.spdBase; 
+    }
+    
+    const el = document.createElement('div'); el.className = 'monster' + (isBoss ? ' boss' : '');
+    let imgStage = playingStageId === 'infinity' ? (Math.floor(Math.random() * 10) + 1) : playingStageId;
+    let gender = Math.random() > 0.5 ? 'm' : 'f'; let typeStr = isBoss ? 'boss' : gender; 
+    
+    let walkImgPath = `images/stage${imgStage}_${typeStr}_walk.png`; 
+    let hitImgPath = `images/stage${imgStage}_${typeStr}_hit.png`;
+    el.style.backgroundImage = `url('${walkImgPath}')`;
+    
+    const hpBg = document.createElement('div'); hpBg.className = 'monster-hp-bg'; 
+    const hpFill = document.createElement('div'); hpFill.className = 'monster-hp-fill'; 
+    hpBg.appendChild(hpFill); el.appendChild(hpBg);
+    
+    const yOffset = 40; 
+    el.style.bottom = yOffset + 'px'; 
+    
+    let startX = gameArea.clientWidth; 
+    let activeMonsters = monsters.filter(m => m.active);
+    if (activeMonsters.length > 0) {
+        let lastMonster = activeMonsters[activeMonsters.length - 1];
+        let gap = isBoss ? 150 : 100; 
+        startX = Math.max(startX, lastMonster.x + gap);
+    }
+    
+    el.style.left = startX + 'px'; 
+    gameArea.appendChild(el);
+    
+    if(isBoss && playingStageId !== 'infinity') { const warn = document.getElementById('boss-warning'); warn.style.display = 'block'; setTimeout(() => warn.style.display = 'none', 3000); }
+    if(saveData.equippedChar === 'c4') speed *= 2.0;
+    
+    monsters.push({ el, hpBg, hpFill, x: startX, y: yOffset, speed, active: true, mhp: maxHp, maxHp: maxHp, isBoss: isBoss, walkImg: walkImgPath, hitImg: hitImgPath });
+    spawnedCount++; updateInGameUI();
+}
+
+function gameLoop(timestamp) {
+    if(!isPlaying || isPaused) return;
+    const deltaTime = timestamp - lastTime; lastTime = timestamp;
+    
+    if(slowTimer > 0) { slowTimer -= (deltaTime / 1000); if(slowTimer <= 0) { slowTimer = 0; document.getElementById('time-slow-overlay').style.display = 'none'; } }
+    if(saveData.equippedChar === 'c9') { grace = Math.min(100, grace + (2 * (deltaTime / 1000))); graceFill.style.height = grace + '%'; }
+    if(saveData.equippedChar === 'c17' && Math.floor(timestamp/1000) > Math.floor((timestamp-deltaTime)/1000)) {
+        monsters.forEach(m => { if(m.active && m.x <= CASTLE_X + 150) { damageMonster(m, saveData.attackPower * 5); spawnParticles(m.x, parseInt(m.el.style.bottom), '🔥'); } });
+    }
+
+    let activeCount = monsters.filter(m => m.active).length;
+    while (activeCount < 6 && (playingStageId === 'infinity' || spawnedCount < currentStageTarget)) {
+        spawnMonster();
+        activeCount++;
+    }
+
+    updateMonsters(deltaTime); updateArrows(deltaTime);
+    requestAnimationFrame(gameLoop);
+}
+
+function updateMonsters(dt) {
+    let currentSpeedFactor = (slowTimer > 0) ? 0.3 : 1;
+    let modeSpeedFactor = (currentQuizType === 'blank') ? 0.5 : 1.0; 
+    for (let i = monsters.length - 1; i >= 0; i--) {
+        let m = monsters[i]; if(!m.active) continue;
+        m.x -= m.speed * currentSpeedFactor * gameSpeedMultiplier * modeSpeedFactor * (dt / 1000); m.el.style.left = m.x + 'px';
+        if (m.x <= CASTLE_X) {
+            takeDamage(m.isBoss ? 30 : 15); m.el.remove(); monsters.splice(i, 1); killedCount++; 
+            if (playingStageId !== 'infinity') checkStageClear(); else updateInGameUI();
+        }
+    }
+}
+
+function getWeaponInfo(atk) {
+    let count = 1 + Math.floor(atk / 3); 
+    if(saveData.equippedChar === 'c15') count++; 
+    if (chosenWeapon === 'sword') return { name: "검", count: count + 2, emoji: "🗡️", baseDmg: atk * 24 }; 
+    else if (chosenWeapon === 'staff') return { name: "지팡이", count: count, emoji: "🪄", baseDmg: atk * 45 }; 
+    else return { name: "활", count: count, emoji: "🏹", baseDmg: atk * 30 };
+}
+
+function createArrow(targetMonster, projectileEmoji, sourceX = null, sourceY = null) {
+    const el = document.createElement('div'); el.className = 'arrow'; el.innerText = projectileEmoji; let startX, startY;
+    if(sourceX !== null && sourceY !== null) { startX = sourceX; startY = sourceY; } 
+    else { 
+        let archerRect = archer.getBoundingClientRect(); let gameAreaRect = gameArea.getBoundingClientRect(); 
+        startX = archerRect.right - gameAreaRect.left; startY = gameAreaRect.bottom - archerRect.top - 30; 
+    }
+    el.style.left = startX + 'px'; el.style.bottom = startY + 'px'; gameArea.appendChild(el);
+    arrows.push({ el, x: startX, y: startY, target: targetMonster, active: true, speed: 800, isChain: (sourceX !== null) });
+    if(sourceX === null) { archer.style.transform = 'scale(1.2) rotate(-15deg)'; setTimeout(() => archer.style.transform = 'scale(1) rotate(0deg)', 150); }
+}
+
+function updateArrows(dt) {
+    for (let i = arrows.length - 1; i >= 0; i--) {
+        let a = arrows[i]; if(!a.active) continue;
+        if(!a.target || !a.target.active) { a.el.remove(); arrows.splice(i, 1); continue; }
+        let dx = a.target.x - a.x; let dy = a.target.y - a.y; let dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 30) {
+            a.el.remove(); arrows.splice(i, 1);
+            let wInfo = getWeaponInfo(saveData.attackPower); let finalDmg = Math.floor(wInfo.baseDmg * damageMultiplier); 
+            if (saveData.equippedChar === 'c13' && !a.target.isBoss && Math.random() < 0.15) {
+                finalDmg = a.target.maxHp; showFloatingText("즉사!", a.target.x, a.target.y+50, 'combo-text', '#a855f7');
+            }
+            damageMonster(a.target, finalDmg, false, a.isChain);
+        } else {
+            let moveDist = a.speed * gameSpeedMultiplier * (dt / 1000); 
+            a.x += (dx / dist) * moveDist; a.y += (dy / dist) * moveDist;
+            a.el.style.left = a.x + 'px'; a.el.style.bottom = a.y + 'px';
+            if(a.el.innerText === '🏹' || a.el.innerText === '🗡️') { let angle = Math.atan2(-dy, dx) * (180 / Math.PI); a.el.style.transform = `rotate(${angle}deg)`; }
+        }
+    }
+}
+
+function damageMonster(monster, damage, isSplash = false, isChain = false) {
+    if (monster.isBoss && saveData.equippedChar === 'c16') damage = Math.floor(damage * 2.5);
+    monster.mhp -= damage; monster.hpBg.style.display = 'block'; monster.hpFill.style.width = Math.max(0, (monster.mhp / monster.maxHp * 100)) + '%';
+    if (saveData.equippedChar === 'c3') { monster.x = gameArea.clientWidth - 50; }
+
+    if (monster.mhp > 0) {
+        monster.el.style.backgroundImage = `url('${monster.hitImg}')`; monster.el.style.filter = monster.isBoss ? 'drop-shadow(0 0 10px red) brightness(1.5)' : 'brightness(1.5) drop-shadow(0 0 5px white)';
+        setTimeout(() => { if(monster.active) { monster.el.style.backgroundImage = `url('${monster.walkImg}')`; monster.el.style.filter = monster.isBoss ? 'drop-shadow(0 0 10px red)' : 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))'; } }, 150);
+        showFloatingText(`-${damage}`, monster.x, parseInt(monster.el.style.bottom)+40, 'floating-text', '#fff'); return;
+    }
+    
+    if (monster.mhp < 0 && saveData.equippedChar === 'c5' && !isSplash) {
+        let overflow = Math.abs(monster.mhp);
+        monsters.forEach(m => { if (m.active && m !== monster && Math.abs(m.x - monster.x) < 150) { damageMonster(m, overflow, true, false); } });
+        spawnParticles(monster.x, parseInt(monster.el.style.bottom), '💥');
+    }
+    if (!isChain && saveData.equippedChar === 'c6' && damage >= monster.maxHp) {
+        let activeMonsters = monsters.filter(m => m.active && m !== monster);
+        if (activeMonsters.length > 0) {
+            let nextTarget = activeMonsters.sort((a,b) => Math.abs(a.x - monster.x) - Math.abs(b.x - monster.x))[0];
+            let wInfo = getWeaponInfo(saveData.attackPower); createArrow(nextTarget, wInfo.emoji, monster.x, parseInt(monster.el.style.bottom));
+        }
+    }
+    if (saveData.equippedChar === 'c7') { hp = Math.min(100, hp + 2); updateInGameUI(); showFloatingText("+2", CASTLE_X, 150, 'floating-text', '#10b981'); }
+
+    monster.active = false; monster.el.style.opacity = '0'; monster.hpBg.style.display = 'none'; spawnParticles(monster.x, parseInt(monster.el.style.bottom), '💥');
+    
+    let stageMultiplier = (playingStageId === 'infinity') ? 10 : playingStageId;
+    let earnedGold = monster.isBoss ? (10 + stageMultiplier * 5) : (1 + Math.ceil(stageMultiplier / 2));
+    let earnedEnergy = monster.isBoss ? 5 : 1; 
+    
+    if (currentDifficulty === 'normal') earnedGold *= 2; 
+    if (saveData.equippedChar === 'c4') earnedGold *= 2;
+    if (gameSpeedMultiplier === 3.0) earnedGold *= 3;
+    else if (gameSpeedMultiplier === 2.0) earnedGold *= 2; 
+    else if (gameSpeedMultiplier === 0.5) earnedGold = Math.max(1, Math.floor(earnedGold * 0.5)); 
+    else if (gameSpeedMultiplier === 0.25) earnedGold = Math.max(1, Math.floor(earnedGold * 0.25)); 
+    
+    saveData.gold += earnedGold; saveData.energy += earnedEnergy; earnedGoldThisStage += earnedGold; renderTopStats(); 
+    showFloatingText(`+${earnedGold}G / +${earnedEnergy}💧`, monster.x, parseInt(monster.el.style.bottom)+40, 'floating-text', 'var(--gold)');
+    killedCount++; updateInGameUI();
+    
+    setTimeout(() => { 
+        monster.el.remove(); let idx = monsters.indexOf(monster); if(idx > -1) monsters.splice(idx, 1); 
+        if (playingStageId !== 'infinity') checkStageClear(); 
+    }, 200);
+}
+
+function checkStageClear() {
+    if (killedCount >= currentStageTarget && isPlaying) {
+        let clearBonus = currentStageObj.id * 10; 
+        if (currentDifficulty === 'normal') clearBonus *= 2;
+        if (gameSpeedMultiplier === 3.0) clearBonus *= 3;
+        else if (gameSpeedMultiplier === 2.0) clearBonus *= 2; 
+        else if (gameSpeedMultiplier === 0.5) clearBonus = Math.floor(clearBonus * 0.5);
+        else if (gameSpeedMultiplier === 0.25) clearBonus = Math.floor(clearBonus * 0.25);
+        saveData.gold += clearBonus; earnedGoldThisStage += clearBonus; endGame(true);
+    }
+}
+
+function takeDamage(amount) { 
+    if (currentShield > 0) {
+        if (amount >= currentShield) { amount -= currentShield; currentShield = 0; } 
+        else { currentShield -= amount; amount = 0; }
+    }
+    hp -= amount; 
+    if(hp <= 0) { 
+        if(saveData.equippedChar === 'c20' && !usedC20) { hp = 50; usedC20 = true; showFloatingText("👼 기적의 부활!", CASTLE_X, 250, 'combo-text', '#fde047'); monsters.forEach(m => { if(m.active) m.x += 300; }); } 
+        else if(saveData.lives > 0) { saveData.lives--; hp = 100; saveGame(); renderTopStats(); showFloatingText("❤️ 생명 연장!", CASTLE_X, 200, 'combo-text', '#ef4444'); monsters.forEach(m => { if(m.active) m.x += 200; }); } 
+        else { hp = 0; endGame(false); }
+    }
+    castle.classList.add('shake'); setTimeout(() => castle.classList.remove('shake'), 300); showFloatingText(`-${amount}`, CASTLE_X, 150); updateInGameUI(); 
+}
+
+function nextQuiz() {
+    const idx = Math.floor(Math.random() * filteredData.length); currentQuiz = filteredData[idx];
+    if (currentQuizType === 'blank') {
+        let rawWords = currentQuiz.t.split(" "); let validWords = []; rawWords.forEach(w => { let clean = w.replace(/[^\w\s가-힣]/g, ''); if(clean.length >= 2) validWords.push(clean); });
+        let bWord = validWords.length === 0 ? rawWords[0].replace(/[^\w\s가-힣]/g, '') : validWords[Math.floor(Math.random() * validWords.length)];
+        currentQuiz.blankWord = bWord; let hiddenText = currentQuiz.t.split(" ").map(w => { return w.replace(/[^\w\s가-힣]/g, '') === bWord ? "[ 빈 칸 ]" : w; }).join(" ");
+        displayChapter.innerText = `${currentQuiz.c}장 ${currentQuiz.v}절`; verseDisplay.innerText = `"${hiddenText}"`; inpVerse.type = "text"; inpVerse.placeholder = "단어 입력";
+        if (currentDifficulty === 'practice' || skill2Hints > 0) { hintDisplay.classList.remove('hidden'); hintDisplay.innerText = `[정답: ${bWord}]`; } else { hintDisplay.classList.add('hidden'); }
+    } else {
+        displayChapter.innerText = `${currentQuiz.c}장`; verseDisplay.innerText = `"${currentQuiz.t}"`; inpVerse.type = "number"; inpVerse.placeholder = "몇 절?";
+        if (currentDifficulty === 'practice' || skill2Hints > 0) { hintDisplay.classList.remove('hidden'); hintDisplay.innerText = `[정답: ${currentQuiz.v}절]`; } else { hintDisplay.classList.add('hidden'); }
+    }
+    inpVerse.value = ''; inpVerse.focus();
+}
+
+function checkAnswer() {
+    if(!isPlaying || isPaused) return; 
+    let isCorrect = false;
+    if (currentQuizType === 'blank') { isCorrect = (inpVerse.value.trim() === currentQuiz.blankWord); } else { let ansV = parseInt(inpVerse.value); if(isNaN(ansV)) return; isCorrect = (ansV === currentQuiz.v); }
+    
+    if(isCorrect) {
+        combo++; if(skill2Hints > 0) skill2Hints--;
+        if(saveData.equippedChar === 'c11') { saveData.gold += 5; earnedGoldThisStage += 5; showFloatingText("+5G", gameArea.clientWidth/2, 100, 'floating-text', 'var(--gold)'); }
+        if(saveData.equippedChar === 'c14') { slowTimer = Math.max(slowTimer, 0.5); }
+        if(saveData.equippedChar === 'c18' && combo > 0 && combo % 5 === 0) { showFloatingText("⚡ 천둥!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 80, 'combo-text', '#fde047'); let targets = monsters.filter(m=>m.active).sort((a,b)=>a.x-b.x).slice(0,3); targets.forEach(m => { spawnParticles(m.x, parseInt(m.el.style.bottom), '⚡'); damageMonster(m, 100); }); }
+        
+        let verseId = `${currentQuiz.c}-${currentQuiz.v}`;
+        if (!saveData.unlockedVerses.includes(verseId)) { saveData.unlockedVerses.push(verseId); showFloatingText("📖 도감 해금!", gameArea.clientWidth/2, gameArea.clientHeight/2 - 60, 'floating-text', '#10b981'); }
+        if (!saveData.verseCounts[verseId]) saveData.verseCounts[verseId] = 0; saveData.verseCounts[verseId]++;
+        if(saveData.equippedChar === 'c8') { if(combo >= 4) damageMultiplier = 3.0; else if(combo >= 2) damageMultiplier = 2.0; else damageMultiplier = 1.0; } else { if(combo >= 5) damageMultiplier = 2.0; else if(combo >= 3) damageMultiplier = 1.5; else damageMultiplier = 1.0; }
+        document.getElementById('quiz-panel').style.borderColor = '#10b981'; setTimeout(()=> document.getElementById('quiz-panel').style.borderColor = '#374151', 300);
+        if(combo > 1) { let buffTxt = damageMultiplier > 1 ? ` (DMG x${damageMultiplier})` : ''; showFloatingText(`${combo} COMBO!${buffTxt}`, gameArea.clientWidth/2, gameArea.clientHeight/2, 'combo-text'); }
+        grace = Math.min(100, grace + 15 + (combo * 2)); let weapon = getWeaponInfo(saveData.attackPower); let activeMonsters = monsters.filter(m => m.active); let targets = [];
+        if (chosenWeapon === 'sword') { let rangeLimit = CASTLE_X + 250; targets = activeMonsters.filter(m => m.x <= rangeLimit).sort((a, b) => a.x - b.x).slice(0, weapon.count); if (targets.length === 0 && activeMonsters.length > 0) showFloatingText("사거리 밖입니다!", gameArea.clientWidth/2, gameArea.clientHeight/2 - 20); } else if (chosenWeapon === 'staff') { targets = activeMonsters.sort((a, b) => b.mhp - a.mhp || a.x - b.x).slice(0, weapon.count); } else { targets = activeMonsters.sort((a, b) => a.x - b.x).slice(0, weapon.count); }
+        if(targets.length > 0) { targets.forEach((target, index) => { setTimeout(() => createArrow(target, weapon.emoji), index * 100); }); } else { archer.style.transform = 'scale(1.2)'; setTimeout(() => archer.style.transform = 'scale(1)', 150); }
+        updateInGameUI(); nextQuiz();
+    } else {
+        if (!wrongAnswersThisSession.some(q => q.t === currentQuiz.t)) { wrongAnswersThisSession.push(currentQuiz); }
+        if (saveData.equippedChar === 'c10') { combo = Math.max(0, combo - 1); } else { combo = 0; }
+        if(saveData.equippedChar === 'c8') { if(combo >= 4) damageMultiplier = 3.0; else if(combo >= 2) damageMultiplier = 2.0; else damageMultiplier = 1.0; } else { if(combo >= 5) damageMultiplier = 2.0; else if(combo >= 3) damageMultiplier = 1.5; else damageMultiplier = 1.0; }
+        updateInGameUI(); document.getElementById('quiz-panel').classList.add('shake'); document.getElementById('quiz-panel').style.borderColor = '#ef4444'; setTimeout(()=> { document.getElementById('quiz-panel').classList.remove('shake'); document.getElementById('quiz-panel').style.borderColor = '#374151'; }, 300);
+        monsters.forEach(m => { if(m.active) m.x -= 40; }); showFloatingText("오답!", gameArea.clientWidth/2, gameArea.clientHeight/2 - 50); inpVerse.value = ''; inpVerse.focus();
+    }
+}
+
+function useGraceSkill() { if (grace < 100) { showFloatingText("은혜 부족!", gameArea.clientWidth/2, gameArea.clientHeight/2); return; } grace = 0; updateInGameUI(); showFloatingText("성령의 폭풍!!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 50); let originalBg = document.getElementById('game-wrapper').style.background; document.getElementById('game-wrapper').style.background = 'rgba(251, 191, 36, 0.5)'; setTimeout(() => document.getElementById('game-wrapper').style.background = originalBg, 200); monsters.forEach(m => { if (m.active) { m.x += 150; spawnParticles(m.x, parseInt(m.el.style.bottom), '⚡'); damageMonster(m, saveData.attackPower * 30); } }); }
+function checkItemConsume() { if(saveData.equippedChar === 'c19' && Math.random() < 0.3) { showFloatingText("✨ 소모 무효!", CASTLE_X, 250, 'floating-text', '#60a5fa'); return false; } return true; }
+function useTimeSlow() { if (saveData.slowItems <= 0) { showFloatingText("모래시계 없음!", gameArea.clientWidth/2, gameArea.clientHeight/2); return; } if (slowTimer > 0) return; if(checkItemConsume()) saveData.slowItems--; saveGame(); renderTopStats(); slowTimer = 5.0; document.getElementById('time-slow-overlay').style.display = 'block'; showFloatingText("시간 지연!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 20, 'combo-text', '#60a5fa'); }
+function useLightning() { if (saveData.lightnings <= 0) { showFloatingText("번개 없음!", gameArea.clientWidth/2, gameArea.clientHeight/2); return; } let activeMonsters = monsters.filter(m => m.active).sort((a, b) => a.x - b.x); if (activeMonsters.length === 0) return; if(checkItemConsume()) saveData.lightnings--; saveGame(); renderTopStats(); showFloatingText("⚡ 심판의 번개!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 20, 'combo-text', '#fde047'); let targets = activeMonsters.slice(0, 3); targets.forEach(m => { spawnParticles(m.x, parseInt(m.el.style.bottom), '⚡'); damageMonster(m, 100); }); }
+function useTrumpet() { if (saveData.trumpets <= 0) { showFloatingText("나팔 없음!", gameArea.clientWidth/2, gameArea.clientHeight/2); return; } let activeMonsters = monsters.filter(m => m.active); if (activeMonsters.length === 0) return; if(checkItemConsume()) saveData.trumpets--; saveGame(); renderTopStats(); showFloatingText("🎺 나팔 소리!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 20, 'combo-text', '#fcd34d'); activeMonsters.forEach(m => { m.x = gameArea.clientWidth - 50; spawnParticles(m.x, parseInt(m.el.style.bottom), '💨'); }); }
+function useBowl() { if (saveData.bowls <= 0) { showFloatingText("대접 없음!", gameArea.clientWidth/2, gameArea.clientHeight/2); return; } let activeMonsters = monsters.filter(m => m.active); if (activeMonsters.length === 0) return; if(checkItemConsume()) saveData.bowls--; saveGame(); renderTopStats(); showFloatingText("🥣 진노의 대접!!", gameArea.clientWidth/2, gameArea.clientHeight/2 + 20, 'combo-text', '#ef4444'); let originalBg = document.getElementById('game-wrapper').style.background; document.getElementById('game-wrapper').style.background = 'rgba(239, 68, 68, 0.4)'; setTimeout(() => document.getElementById('game-wrapper').style.background = originalBg, 200); activeMonsters.forEach(m => { spawnParticles(m.x, parseInt(m.el.style.bottom), '🔥'); damageMonster(m, 300); }); }
+
+function updateInGameUI() {
+    hpBar.style.width = hp + '%'; graceFill.style.height = grace + '%'; 
+    if (playingStageId === 'infinity') { progressTxt.innerText = `${killedCount} / ∞`; } else { progressTxt.innerText = `${killedCount}/${currentStageTarget}`; }
+    let weapon = getWeaponInfo(saveData.attackPower); weaponTxt.innerText = weapon.name;
+    if (combo >= 2) { comboMultContainer.classList.remove('hidden'); comboMultTxt.innerText = `x${damageMultiplier.toFixed(1)}`; } else { comboMultContainer.classList.add('hidden'); }
+    if(hp <= 30) hpBar.style.background = 'red'; else hpBar.style.background = 'linear-gradient(90deg, #10b981, #34d399)';
+    if(currentShield > 0) { document.getElementById('shield-txt').innerText = `+${currentShield}`; } else { document.getElementById('shield-txt').innerText = ''; }
+}
+
+function showFloatingText(text, x, y, customClass = 'floating-text', color = null) { const el = document.createElement('div'); el.className = customClass; el.innerText = text; el.style.left = x + 'px'; el.style.bottom = y + 'px'; if(color) el.style.color = color; gameArea.appendChild(el); setTimeout(() => el.remove(), 1200); }
+function spawnParticles(x, y, emoji) { for(let i=0; i<4; i++) { const p = document.createElement('div'); p.innerText = emoji; p.style.position = 'absolute'; p.style.left = x + 'px'; p.style.bottom = y + 'px'; p.style.fontSize = '24px'; p.style.pointerEvents = 'none'; p.style.zIndex = 20; gameArea.appendChild(p); let dx = (Math.random() - 0.5) * 150; let dy = Math.random() * 100 + 50; p.animate([ { transform: `translate(0, 0) rotate(0deg) scale(1)`, opacity: 1 }, { transform: `translate(${dx}px, ${-dy}px) rotate(${Math.random()*360}deg) scale(0)`, opacity: 0 } ], { duration: 600 + Math.random() * 200, easing: 'ease-out' }).onfinish = () => p.remove(); } }
+
+window.onload = () => { init(); };
